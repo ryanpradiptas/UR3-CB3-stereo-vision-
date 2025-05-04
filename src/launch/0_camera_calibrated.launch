@@ -1,0 +1,26 @@
+<launch>
+    <!-- Node untuk kamera kiri -->
+    <node name="left_camera" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="/dev/video0"/>
+        <param name="image_width" value="1024"/>
+        <param name="image_height" value="768"/>
+        <param name="camera_frame_id" value="left_camera"/>
+        <param name="io_method" value="mmap"/>
+        <param name="pixel_format" value="yuyv"/>
+        <!-- Parameter kalibrasi -->
+        <param name="camera_info_url" value="file:///home/individual2/TugasAkhir/src/ur3-moveit-test/ur3_moveit/scripts/Skripsi/left.yaml"/>
+    </node>
+
+    <!-- Node untuk kamera kanan -->
+    <node name="right_camera" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="/dev/video2"/>
+        <param name="image_width" value="1024"/>
+        <param name="image_height" value="768"/>
+        <param name="camera_frame_id" value="right_camera"/>
+        <param name="io_method" value="mmap"/>
+        <param name="pixel_format" value="yuyv"/>
+        <!-- Parameter kalibrasi -->
+        <param name="camera_info_url" value="file:///home/individual2/TugasAkhir/src/ur3-moveit-test/ur3_moveit/scripts/Skripsi/right.yaml"/>
+    </node>
+</launch>
+
